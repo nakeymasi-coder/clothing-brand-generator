@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clothing Brand Prompt Generator — Your Brand, Your Words, Your Empire</title>
+<meta name="description" content="Turn your clothing brand ideas into scroll-stopping AI design prompts. No drawing. No designer. Just $27 one-time.">
+<meta property="og:title" content="Clothing Brand Prompt Generator — Turn Your Ideas Into Designs">
+<meta property="og:description" content="No drawing. No designer. Ready-to-use AI prompts for your clothing brand. Only $27 one-time.">
+<meta property="og:image" content="images/thumbnail.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sapphire:#2E7CD6; --sapphire-deep:#17457E; --sapphire-soft:#9CC4F2; --sapphire-pale:#E7F1FD;
+  --chrome:#C7D2E4; --chrome-deep:#8B98B0; --chrome-pale:#F2F5FA;
+  --pearl:#FDFEFF; --ink:#1B2A44; --muted:#5B6E8F; --black:#101418;
+  --grad:linear-gradient(120deg,#5B9BE8,#2E7CD6 55%,#17457E);
+  --chrome-grad:linear-gradient(135deg,#FFFFFF 0%,#DCE6F4 35%,#AEBDD4 60%,#F4F8FD 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;color:var(--ink);background:linear-gradient(180deg,#FDFEFF 0%,#F3F7FD 40%,#E9F1FB 70%,#FDFEFF 100%);overflow-x:hidden}
+h1,h2,h3{font-family:'Unbounded',sans-serif}
+.wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:13px 26px;background:rgba(253,254,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(46,124,214,.14)}
+.logo{font-family:'Unbounded';font-weight:800;font-size:15px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;cursor:pointer;text-decoration:none;font-family:'Unbounded';font-weight:700;font-size:16px;color:#fff;padding:17px 40px;border-radius:999px;background:linear-gradient(120deg,#5B9BE8,#2E7CD6 55%,#17457E);background-size:180% 180%;box-shadow:0 12px 32px rgba(46,124,214,.42),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .25s,box-shadow .25s,background-position .5s}
+.btn:hover{transform:translateY(-3px) scale(1.02);background-position:90% 50%;box-shadow:0 18px 44px rgba(46,124,214,.55)}
+.btn-sm{padding:11px 26px;font-size:13px}
+.btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+/* hero */
+.hero{text-align:center;padding:96px 22px 60px;position:relative}
+.hero .badge{display:inline-block;font-weight:700;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:var(--sapphire-deep);background:rgba(255,255,255,.7);border:1px solid rgba(46,124,214,.32);padding:10px 22px;border-radius:999px;margin-bottom:26px;box-shadow:0 6px 18px rgba(46,124,214,.14)}
+.hero h1{font-size:clamp(2rem,5.6vw,3.9rem);font-weight:800;line-height:1.15;margin-bottom:22px}
+.hero h1 .shimmer{background:linear-gradient(100deg,#5B9BE8 10%,#8B98B0 35%,#17457E 55%,#5B9BE8 75%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:220% center}}
+.hero .sub{font-size:clamp(1.02rem,2.2vw,1.25rem);color:var(--muted);max-width:680px;margin:0 auto 34px;line-height:1.7}
+.hero .sub b{color:var(--sapphire-deep)}
+.hero img.cover{width:min(300px,70vw);border-radius:26px;display:block;margin:34px auto 8px;border:6px solid #fff;box-shadow:0 28px 64px rgba(23,69,126,.28)}
+.price-line{margin:26px 0 8px;font-size:1.05rem;color:var(--muted)}
+.price-line b{color:var(--sapphire-deep);font-size:1.35rem}
+/* marquee */
+.marquee{overflow:hidden;border-top:1px solid rgba(46,124,214,.18);border-bottom:1px solid rgba(46,124,214,.18);background:rgba(255,255,255,.55);padding:15px 0;margin:34px 0 0}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:scrollX 32s linear infinite;font-family:'Unbounded';font-weight:700;font-size:13px;letter-spacing:2px;color:var(--sapphire-deep);white-space:nowrap}
+@keyframes scrollX{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:74px 0}
+.kicker{display:inline-block;font-family:'Unbounded';font-size:12px;letter-spacing:3px;color:var(--sapphire);text-transform:uppercase;margin-bottom:14px}
+.sec-head{text-align:center;margin-bottom:46px}
+.sec-head h2{font-size:clamp(1.55rem,3.8vw,2.5rem);font-weight:800;margin-bottom:14px;line-height:1.25}
+.sec-head p{color:var(--muted);font-size:1.06rem;max-width:640px;margin:0 auto;line-height:1.7}
+/* pain */
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pain-card{background:rgba(255,255,255,.72);border:1px solid rgba(46,124,214,.16);border-radius:20px;padding:26px 24px;box-shadow:0 10px 30px rgba(23,69,126,.08)}
+.pain-card p{line-height:1.7;font-size:1rem;color:#33475F}
+.pain-card p b{color:var(--sapphire-deep)}
+/* shift */
+.shift-panel{border-radius:28px;padding:56px 34px;text-align:center;color:#fff;background:linear-gradient(130deg,#5B9BE8 0%,#2E7CD6 50%,#17457E 100%);position:relative;overflow:hidden}
+.shift-panel::before{content:"🦋";position:absolute;font-size:120px;opacity:.14;top:12px;left:26px;transform:rotate(-18deg)}
+.shift-panel::after{content:"🦋";position:absolute;font-size:90px;opacity:.12;bottom:10px;right:30px;transform:rotate(14deg)}
+.shift-panel h2{font-size:clamp(1.5rem,3.6vw,2.3rem);margin-bottom:18px;position:relative}
+.shift-panel p{font-size:1.1rem;line-height:1.75;max-width:640px;margin:0 auto;opacity:.95;position:relative}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:rgba(255,255,255,.75);border:1px solid rgba(46,124,214,.16);border-radius:24px;padding:36px 26px;text-align:center;box-shadow:0 14px 38px rgba(23,69,126,.1)}
+.step-num{width:62px;height:62px;margin:0 auto 18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Unbounded';font-weight:800;font-size:1.35rem;color:#fff;background:var(--grad);box-shadow:0 10px 26px rgba(46,124,214,.4)}
+.step h3{font-size:1.02rem;margin-bottom:10px}
+.step p{color:var(--muted);line-height:1.65;font-size:.96rem}
+/* inside */
+.inside{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.in-card{background:rgba(255,255,255,.75);border-radius:22px;padding:30px 28px;border:1px solid rgba(46,124,214,.16);box-shadow:0 12px 34px rgba(23,69,126,.09)}
+.in-card .icon{font-size:30px;margin-bottom:14px}
+.in-card h3{font-size:1.02rem;margin-bottom:10px}
+.in-card p{color:var(--muted);line-height:1.65;font-size:.97rem}
+.in-card p b{color:var(--sapphire-deep)}
+/* money */
+.money{background:linear-gradient(180deg,#101418,#1B2A44);border-radius:28px;padding:60px 36px;color:#fff}
+.money h2{font-size:clamp(1.5rem,3.6vw,2.3rem);margin-bottom:14px;text-align:center}
+.money .lede{text-align:center;color:#C7D2E4;max-width:620px;margin:0 auto 36px;line-height:1.7;font-size:1.05rem}
+.money-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.money-card{background:rgba(255,255,255,.06);border:1px solid rgba(199,210,228,.22);border-radius:20px;padding:28px 24px}
+.money-card .icon{font-size:28px;margin-bottom:12px}
+.money-card h3{font-size:1rem;margin-bottom:10px;color:#fff}
+.money-card p{color:#C7D2E4;line-height:1.65;font-size:.95rem}
+/* showcase */
+.shows{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.show{background:#fff;border-radius:20px;overflow:hidden;border:1px solid rgba(46,124,214,.16);box-shadow:0 16px 44px rgba(23,69,126,.12)}
+.show img{width:100%;height:330px;object-fit:cover;object-position:top center;display:block}
+.show-cap{padding:18px 22px;font-size:.95rem;line-height:1.65;color:#33475F;border-top:1px solid rgba(46,124,214,.12)}
+.show-cap b{font-family:'Unbounded';font-size:.78rem;letter-spacing:1px;color:var(--sapphire-deep);display:block;margin-bottom:6px}
+/* offer */
+.offer{border-radius:28px;background:#fff;border:2px solid rgba(46,124,214,.3);box-shadow:0 30px 70px rgba(23,69,126,.16);padding:56px 36px;text-align:center}
+.offer h2{font-size:clamp(1.5rem,3.6vw,2.4rem);margin-bottom:30px}
+.stack{max-width:560px;margin:0 auto 30px;text-align:left}
+.stack-item{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border-bottom:1px solid rgba(46,124,214,.14)}
+.stack-item:last-child{border-bottom:none}
+.stack-item .check{font-size:22px;line-height:1.2}
+.stack-item b{display:block;margin-bottom:4px}
+.stack-item p{color:var(--muted);font-size:.95rem;line-height:1.6}
+.stack-item .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;background:var(--sapphire-pale);color:var(--sapphire-deep);padding:4px 12px;border-radius:999px;margin-left:8px;vertical-align:middle}
+.price-big{font-family:'Unbounded';font-weight:800;font-size:clamp(2.8rem,7vw,4.2rem);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:6px 0}
+.was{color:var(--muted);text-decoration:line-through;font-size:1.15rem}
+.reassure{margin-top:18px;color:var(--muted);font-size:.95rem}
+/* guarantee */
+.guarantee{display:flex;gap:26px;align-items:center;background:rgba(255,255,255,.75);border:1px solid rgba(46,124,214,.2);border-radius:24px;padding:40px 34px;box-shadow:0 14px 38px rgba(23,69,126,.1)}
+.guarantee .seal{font-size:64px;flex-shrink:0}
+.guarantee h3{font-size:1.15rem;margin-bottom:10px}
+.guarantee p{color:var(--muted);line-height:1.7}
+/* faq */
+.faq-item{background:rgba(255,255,255,.75);border:1px solid rgba(46,124,214,.16);border-radius:18px;margin-bottom:14px;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;font-family:'Outfit';font-weight:700;font-size:1.02rem;color:var(--ink);padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 24px 22px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{max-height:300px}
+/* final */
+.final-panel{border-radius:32px;padding:84px 30px;text-align:center;color:#fff;background:linear-gradient(130deg,#5B9BE8 0%,#2E7CD6 50%,#17457E 100%);position:relative;overflow:hidden}
+.final-panel::before{content:"🦋";position:absolute;font-size:150px;opacity:.12;top:20px;right:40px;transform:rotate(16deg)}
+.final-panel h2{font-size:clamp(1.7rem,4.2vw,2.8rem);margin-bottom:16px;position:relative}
+.final-panel p{opacity:.93;font-size:1.08rem;margin:0 auto 30px;max-width:580px;line-height:1.7;position:relative}
+.btn-light{background:#fff;color:var(--sapphire-deep);position:relative;box-shadow:0 14px 36px rgba(0,0,0,.28)}
+.final-price{position:relative;margin-top:20px;font-size:1rem;opacity:.92}
+/* footer */
+.cta-footer{background:#101418;color:#fff;text-align:center;padding:44px 22px 30px;margin-top:80px}
+.cta-footer .twin{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.cta-footer .twin a{flex:1 1 220px;max-width:300px;text-decoration:none;font-family:'Unbounded';font-weight:700;font-size:14px;color:#fff;padding:16px 20px;border-radius:999px;border:2px solid rgba(199,210,228,.5);transition:transform .25s,background .25s}
+.cta-footer .twin a:hover{transform:translateY(-2px);background:rgba(199,210,228,.14)}
+.cta-footer .made{font-size:.82rem;color:#8B98B0}
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:860px){.steps,.money-grid{grid-template-columns:1fr}.pain-grid,.inside,.shows{grid-template-columns:1fr}.guarantee{flex-direction:column;text-align:center}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">🦋 Glam's Prompt Studio</div>
+  <a class="btn btn-sm" href="https://payhip.com/b/bV0si">Get Instant Access</a>
+</nav>
+
+<!-- 1 · HERO -->
+<header class="hero">
+  <span class="badge">🦋 For the woman building her own clothing brand</span>
+  <h1>Your Clothing Brand Is Already in You.<br><span class="shimmer">This Turns It Into Designs.</span></h1>
+  <p class="sub">You don't need to know how to draw. You don't need to pay a designer. Pick your vibe, tap a few boxes, and get <b>ready-to-use AI prompts</b> that turn what's in your head into real clothing designs — then put them on shirts and <b>get paid</b>.</p>
+  <div class="btn-row">
+    <a class="btn" href="https://payhip.com/b/bV0si">Get Instant Access — $27</a>
+  </div>
+  <p class="price-line">Only <b>$27</b> · one-time payment · yours forever</p>
+  <img class="cover" src="images/thumbnail.png" alt="Clothing Brand Prompt Generator">
+</header>
+
+<div class="marquee"><div class="marquee-track" id="marqueeTrack"></div></div>
+
+<div class="wrap">
+
+<!-- 2 · THE PAIN -->
+<section>
+  <div class="sec-head reveal">
+    <span class="kicker">Sound familiar?</span>
+    <h2>You've Got the Vision.<br>Getting It <em>Out</em> Is the Hard Part.</h2>
+  </div>
+  <div class="pain-grid">
+    <div class="pain-card reveal"><p><b>Brand names living in your notes app</b> — fire ideas you can't do anything with because you "can't draw."</p></div>
+    <div class="pain-card reveal"><p><b>Designers charging hundreds</b> for one graphic, and it still doesn't look like what you pictured.</p></div>
+    <div class="pain-card reveal"><p><b>You can see it so clear in your head</b> — the shirt, the letters, the whole vibe — but every mockup you try looks generic.</p></div>
+    <div class="pain-card reveal"><p><b>Meanwhile everybody else is launching.</b> Women with half your taste are selling tees while your ideas sit in a folder.</p></div>
+  </div>
+</section>
+
+<!-- 3 · THE SHIFT -->
+<section style="padding-top:0">
+  <div class="shift-panel reveal">
+    <h2>What If the Only Thing Between You and Your Clothing Line Was the Right Words?</h2>
+    <p>AI image tools can draw anything — but only if you tell them exactly what you want, down to the fabric, the lettering, the lighting. That's a whole skill by itself. The Clothing Brand Prompt Generator <b>speaks that language for you</b>: you bring the vision, it writes the prompt, and your design comes out looking like it came from a studio.</p>
+  </div>
+</section>
+
+<!-- 4 · HOW IT WORKS -->
+<section style="padding-top:0">
+  <div class="sec-head reveal">
+    <span class="kicker">Dead simple</span>
+    <h2>From Idea to Design Prompt in 60 Seconds</h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="step-num">1</div><h3>Pick Your Lane</h3><p>Choose from 30 brand types — streetwear, Y2K, faith-based, kids, luxury minimal, and more. Everything reshapes itself around your vibe.</p></div>
+    <div class="step reveal"><div class="step-num">2</div><h3>Tap Your Details</h3><p>Check the styles, garments, colors, and typography you want. Add your brand name and your own words — your prompt builds live as you tap.</p></div>
+    <div class="step reveal"><div class="step-num">3</div><h3>Copy, Generate, Wear</h3><p>Copy your prompt, paste it into any AI image tool, and watch your design come to life — ready to print, press, and sell.</p></div>
+  </div>
+</section>
+
+<!-- 5 · WHAT'S INSIDE -->
+<section style="padding-top:0">
+  <div class="sec-head reveal">
+    <span class="kicker">What's inside</span>
+    <h2>Everything Done for You.<br>Nothing Left to Figure Out.</h2>
+  </div>
+  <div class="inside">
+    <div class="in-card reveal"><div class="icon">🎯</div><h3>30 Brand Types — Your Lane, Already Mapped</h3><p>Streetwear, Y2K, modest wear, Christian apparel, kids, baby, swim, western, anime, hip hop… <b>pick yours and every option curates itself</b> — garments, colors, fonts, all of it.</p></div>
+    <div class="in-card reveal"><div class="icon">🎨</div><h3>7 Design Styles — 7 Ready Prompts</h3><p>Typography logos, allover patterns, statement tees, character designs, mascots, scripture &amp; faith, humor — <b>each one gets its own clearly-labeled prompt</b> you can copy in one tap.</p></div>
+    <div class="in-card reveal"><div class="icon">💎</div><h3>12 Signature Typography Styles</h3><p>Jeweled diamond script, chrome liquid letters, rhinestone varsity, glitter stickers, candy letters — <b>straight out of Glam's own prompt library</b>, matched to your brand type.</p></div>
+    <div class="in-card reveal"><div class="icon">✍️</div><h3>Your Words, Saved Forever</h3><p>Add your brand name, taglines, and custom text anywhere. Hit ＋ Add and <b>your own options are saved permanently</b> — they show up every visit, marked ★ mine.</p></div>
+  </div>
+</section>
+
+<!-- 6 · USE IT + GET PAID -->
+<section style="padding-top:0">
+  <div class="money reveal">
+    <span class="kicker" style="display:block;text-align:center">The part that matters</span>
+    <h2>How You'll Use It — and How You'll Get Paid</h2>
+    <p class="lede">This isn't a toy you play with once. It's a production tool. Here's what women are doing with it:</p>
+    <div class="money-grid">
+      <div class="money-card"><div class="icon">👕</div><h3>Print &amp; Press Your Own Tees</h3><p>Generate the design, print it at home, press it onto blanks. Sell at pop-ups, to your followers, or straight from your own site. You keep every dollar.</p></div>
+      <div class="money-card"><div class="icon">🛒</div><h3>Sell the Designs Themselves</h3><p>Package your best prompts and graphics as digital downloads. Design once, sell it a hundred times while you sleep.</p></div>
+      <div class="money-card"><div class="icon">📸</div><h3>Mockups That Pre-Sell</h3><p>Post the AI mockup before you print a single shirt. Take pre-orders, then only print what already sold — zero wasted inventory.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · SHOWCASE -->
+<section style="padding-top:0">
+  <div class="sec-head reveal">
+    <span class="kicker">Fresh out of the generator</span>
+    <h2>Real Prompts. Real Designs.</h2>
+    <p>Actual designs made from actual generator prompts — detailed, print-ready, tuned for fabric.</p>
+  </div>
+  <div class="shows">
+    <div class="show reveal"><img src="images/img-hoodie.webp" alt="Black hoodie with camo and gold lettering" loading="lazy"><div class="show-cap"><b>✨ Typography / Streetwear</b>Camo + gold "glam hustle hub" lettering on a black hoodie — print worked right into the fleece.</div></div>
+    <div class="show reveal"><img src="images/img-white-tee.webp" alt="White tee with bold graphic" loading="lazy"><div class="show-cap"><b>✨ Statement Tee</b>Bold collegiate graphic on a white tee — coffee-run ready, print sitting in the cotton.</div></div>
+    <div class="show reveal"><img src="images/img-red-tee.webp" alt="Red tee with retro rocket graphic" loading="lazy"><div class="show-cap"><b>✨ Bold Graphic</b>Retro rocket graphic on a red tee — festival energy, colors that pop off the fabric.</div></div>
+    <div class="show reveal"><img src="images/img-pattern-set.webp" alt="Matching allover pattern sports sets" loading="lazy"><div class="show-cap"><b>✨ Allover Pattern</b>Matching mommy-and-me sports pattern sets — the generator does full pattern looks too.</div></div>
+  </div>
+</section>
+
+<!-- 8 · THE OFFER -->
+<section style="padding-top:0">
+  <div class="offer reveal">
+    <span class="kicker">Your instant-access package</span>
+    <h2>Here's Everything You Get</h2>
+    <div class="stack">
+      <div class="stack-item"><span class="check">✅</span><div><b>Clothing Brand Prompt Generator <span class="tag">Core tool</span></b><p>30 brand types, 7 design styles, 12 signature typography styles, permanent custom saves, one-tap copy. Your design studio in a browser tab.</p></div></div>
+      <div class="stack-item"><span class="check">✅</span><div><b>Quick-Start Walkthrough <span class="tag">Bonus</span></b><p>Your first design in 60 seconds flat — even if you've never touched an AI image tool before.</p></div></div>
+      <div class="stack-item"><span class="check">✅</span><div><b>License Key Delivery <span class="tag">Included</span></b><p>Your unique license key arrives by email right after checkout — it unlocks your generator. Keep it somewhere safe.</p></div></div>
+      <div class="stack-item"><span class="check">💎</span><div><b>Order Bump: Typography Prompt Library — $17 <span class="tag">Optional</span></b><p>14 extra hand-built typography prompts to level up your lettering game. Add it at checkout with one click.</p></div></div>
+    </div>
+    <p class="was">Regular $54</p>
+    <div class="price-big">$27</div>
+    <p style="color:var(--muted);margin-bottom:28px">one-time payment · no subscription · yours forever</p>
+    <a class="btn" href="https://payhip.com/b/bV0si">🚀 Get Instant Access Now</a>
+    <p class="reassure">🔒 Secure checkout · Instant delivery · Your key emailed immediately</p>
+  </div>
+</section>
+
+<!-- 9 · GUARANTEE -->
+<section style="padding-top:0">
+  <div class="guarantee reveal">
+    <div class="seal">🤝</div>
+    <div>
+      <h3>My Word to You</h3>
+      <p>I'm not going to hit you with fine-print games. If you open the generator and it genuinely isn't what I promised — you can't make a single design you're proud of — email me within 7 days and I'll make it right. I built this for women like us, and I stand behind it like that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · FAQ -->
+<section style="padding-top:0">
+  <div class="sec-head reveal">
+    <span class="kicker">Questions, answered</span>
+    <h2>Before You Ask…</h2>
+  </div>
+  <div style="max-width:720px;margin:0 auto">
+    <div class="faq-item reveal"><button class="faq-q">Do I need design skills? <span>＋</span></button><div class="faq-a"><p>No — that's the whole point. If you can tap boxes on your phone, you can use this. The generator writes the expert-level prompt; you just bring the idea.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">What AI tool do I paste the prompts into? <span>＋</span></button><div class="faq-a"><p>Any AI image generator — Midjourney, DALL·E, Ideogram, Leonardo, or whatever you're already using. The prompts are written to work across all of them.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">How do I get access after I pay? <span>＋</span></button><div class="faq-a"><p>Instantly. Checkout takes about a minute, your download and your unique license key land in your email right away, and the key unlocks your generator. Save that email.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">I'm brand new to AI. Will I be lost? <span>＋</span></button><div class="faq-a"><p>Nope. There's a quick-start walkthrough that gets your first design out in 60 seconds. And the whole thing is tap-and-check — no typing long prompts, no learning curve.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">Can I actually sell what I make? <span>＋</span></button><div class="faq-a"><p>Yes. The designs you generate are yours to print, press, and sell — on shirts, hoodies, or as digital products. That's what it's built for.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">Is this a subscription? <span>＋</span></button><div class="faq-a"><p>No. One payment of $27, and it's yours forever — including your permanently saved custom options.</p></div></div>
+  </div>
+</section>
+
+<!-- 11 · FINAL CTA -->
+<section style="padding-top:0">
+  <div class="final-panel reveal">
+    <h2>Your Brand Is Waiting on You, Boo 🦋</h2>
+    <p>Every day those ideas sit in your notes app is a day somebody else launches first. $27. One time. Your designs, your shirts, your empire.</p>
+    <a class="btn btn-light" href="https://payhip.com/b/bV0si">🚀 Get Instant Access — $27</a>
+    <p class="final-price">One-time payment · Instant delivery · License key emailed immediately</p>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<!-- TWIN-BUTTON FOOTER -->
+<footer class="cta-footer">
+  <div class="twin">
+    <a href="https://payhip.com/b/54LoK" target="_blank" rel="noopener">✨ Join The Glam Vault</a>
+    <a href="https://glamhustlehub.com" target="_blank" rel="noopener">🛍️ Shop Glam Hustle Hub</a>
+  </div>
+  <p class="made">made with ♥ by Indigo, Glam's AI assistant</p>
+</footer>
+
+<script>
+(function(){
+  const brands=['STREETWEAR','Y2K','GOTHIC','BOHO','CHRISTIAN APPAREL','KIDS','BABY','LUXURY MINIMAL','ANIME','HIP HOP','WESTERN','SWIMWEAR','PREPPY','FESTIVAL','SKATE'];
+  const half=brands.map(b=>'<span>'+b+' &nbsp;✦</span>').join('');
+  document.getElementById('marqueeTrack').innerHTML=half+half;
+})();
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+(function(){
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+</script>
+</body>
+</html>
